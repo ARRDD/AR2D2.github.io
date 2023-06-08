@@ -18,38 +18,9 @@
   </script>
 
   <script>
-    function updateSingleVideo() {
-      var demo = document.getElementById("single-menu-demos").value;
-      var task = document.getElementById("single-menu-tasks").value;
-      var inst = document.getElementById("single-menu-instances").value;
+    
 
-      console.log("single", demo, task, inst)
-
-      var video = document.getElementById("multi-task-result-video");
-      video.src = "media/results/sim_rollouts/" + 
-                  "n" +
-                  demo +
-                  "-" +
-                  task +
-                  "-" +
-                  inst +
-                  ".mp4"
-      video.playbackRate = 1.75;
-      video.play();
-    }
-
-    function updateQpredVideo() {
-      var task = document.getElementById("single-menu-qpred").value;
-
-      console.log("qpred", task)
-
-      var video = document.getElementById("q-pred-video");
-      video.src = "media/results/qpred/" + 
-                  task + 
-                  ".mp4"
-      video.playbackRate = 1.75;
-      video.play();
-    }
+   
 
   </script>
 
@@ -80,25 +51,7 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-<!--   <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;"> -->
-<!--       <a class="navbar-item" target="_blank" href="https://mohitshridhar.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span> -->
-<!--       </a>
- -->
-<!--       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          
-        </div>
-      </div> -->
-<!--     </div>
 
-  </div> -->
 </nav>
 
 <section class="hero">
@@ -108,28 +61,6 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">AR2-D2: <br> Training a Robot Without a Robot</h1>
           <h3 class="title is-4 conference-authors">Anonymous Submission </a></h3>
-<!--           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a target="_blank" href="https://mohitshridhar.com/">Mohit Shridhar</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a target="_blank" href="http://lucasmanuelli.com/">Lucas Manuelli</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1, 2</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>NVIDIA</span>
-          </div> -->
-
-<!--           <div class="column has-text-centered">
-           
-
-            </div>
-          </div>
-<!--           <br>
-          <br> -->
 
 
         </div>
@@ -286,16 +217,6 @@
 
   </div>
 
-  <!-- Paper video. -->
-<!--   <div class="columns is-centered has-text-centered">
-    <div class="column is-two-thirds">
-      <h2 class="title is-3">Video</h2>
-      <div class="publication-video">
-        <iframe src="https://www.youtube.com/embed/TB0g52N-3_Y?rel=0&amp;showinfo=0"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div> -->
 
 </section>
 
@@ -329,15 +250,7 @@
               To create useful training data, we convert this video into one where it looks like an AR robot manipulated the object. To do so, we segment out and eliminate the human hand using Segment-Anything. We fill in the gap left behind by the missing hand with a video in-painting technique known as E2FGVI.
               Finally, we produce a video with the AR robot arm moving to the key-points identified by the user's hand. This final video processed video makes it appear as if an AR robot arm manipulated the real-world object; it can used as training data for visual-based imitation learning.
               Additionally, since we have access to the scene's depth estimation, we can also generate a 3D voxelized representation of the scene and use it to train agents like Perceiver-Actor.           </p>
-<!--         </br>
-        </br>
-        <h3 class="title is-4">Encoding High-Dimensional Input</h3>
-          <p class="justify">
-            <img src="media/figures/perceiver.png" class="interpolation-image" width="480" align="right"
-                 style="margin:0% 4% "
-                 alt="Interpolate start reference image." />
-             The input grid is 100&times;100&times;100 = 1 million voxels. After extracting 5&times;5&times;5 patches, the input is 20&times;20&times;20 = 8000 embeddings long. Despite this long sequence, Perceiver uses a small set of latent vectors to encode the input. These latent vectors are randomly initialized and trained end-to-end. This approach decouples the depth of the Transformer self-attention layers from the dimensionality of the input space, which allows us train <span class="dperact">PerAct</span> on very large input voxel grids. Perceiver has been deployed in several domains like <a target="_blank" href="https://www.deepmind.com/publications/perceiver-ar-general-purpose-long-context-autoregressive-generation">long-context auto-regressive generation</a>, <a target="_blank" href="https://arxiv.org/abs/2204.14198">vision-language models for few-shot learning</a>, <a target="_blank" href="https://arxiv.org/abs/2107.14795">image and audio classification, and optical flow prediction.</a>
-          </p> -->
+<!
         <br/>
         <br/>
 
@@ -362,110 +275,18 @@
            alt="Interpolate start reference image." />
           </br> 
             
-            <!--         </br>
-        </br>
-        <h3 class="title is-4">Encoding High-Dimensional Input</h3>
-          <p class="justify">
-            <img src="media/figures/perceiver.png" class="interpolation-image" width="480" align="right"
-                 style="margin:0% 4% "
-                 alt="Interpolate start reference image." />
-             The input grid is 100&times;100&times;100 = 1 million voxels. After extracting 5&times;5&times;5 patches, the input is 20&times;20&times;20 = 8000 embeddings long. Despite this long sequence, Perceiver uses a small set of latent vectors to encode the input. These latent vectors are randomly initialized and trained end-to-end. This approach decouples the depth of the Transformer self-attention layers from the dimensionality of the input space, which allows us train <span class="dperact">PerAct</span> on very large input voxel grids. Perceiver has been deployed in several domains like <a target="_blank" href="https://www.deepmind.com/publications/perceiver-ar-general-purpose-long-context-autoregressive-generation">long-context auto-regressive generation</a>, <a target="_blank" href="https://arxiv.org/abs/2204.14198">vision-language models for few-shot learning</a>, <a target="_blank" href="https://arxiv.org/abs/2107.14795">image and audio classification, and optical flow prediction.</a>
-          </p> -->
+          
         <br/>
         <br/>
 
-<!--         <h3 class="title is-4">Simulation Results</h3>
 
-        <div class="columns">
-          <div class="column has-text-centered">
-            <h3 class="title is-5">One Multi-Task Transformer</h3>
-
-            Trained with
-            <div class="select is-small">
-              <select id="single-menu-demos" onchange="updateSingleVideo()">
-              <option value="10">10</option>
-              <option value="100" selected="selected">100</option>
-              </select>
-            </div>
-            demos per task, evaluated on 
-            <div class="select is-small">     
-              <select id="single-menu-tasks" onchange="updateSingleVideo()">
-              <option value="open_drawer" selected="selected">open drawer</option>
-              <option value="slide_block">slide block</option>
-              <option value="sweep_to_dustpan">sweep to dustpan</option>
-              <option value="meat_off_grill">meat off grill</option>
-              <option value="turn_tap">turn tap</option>
-              <option value="put_in_drawer">put in drawer</option>
-              <option value="close_jar">close jar</option>
-              <option value="drag_stick">drag stick</option>
-              <option value="stack_blocks">stack blocks</option>
-              <option value="screw_bulb">screw bulb</option>
-              <option value="put_in_safe">put in safe</option>
-              <option value="place_wine">place wine</option>
-              <option value="put_in_cupboard">put in cupboard</option>
-              <option value="sort_shape">sort shape</option>
-              <option value="push_buttons">push buttons</option>
-              <option value="insert_peg">insert peg</option>
-              <option value="stack_cups">stack cups</option>
-              <option value="place_cups">place cups</option>
-              </select>
-            </div>
-            episode
-            <div class="select is-small">
-              <select id="single-menu-instances" onchange="updateSingleVideo()">
-              <option value="s1">01</option>
-              <option value="s2" selected="selected">02</option>
-              <option value="s3">03</option>
-              <option value="s4">04</option>
-              <option value="s5">05</option>
-              </select>
-            </div>
-            <br/>
-            <br/>
-
-            <video id="multi-task-result-video"
-                   muted
-                   autoplay
-                   loop
-                   width="100%">
-              <source src="media/results/sim_rollouts/n10-open_drawer-s2.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-        </br>
-        </br>
-
-        <h3 class="title is-4">Action Predictions</h3>
-
-        <div class="columns">
-          <div class="column has-text-centered">
-            <h3 class="title is-5">Q-Prediction Examples</h3>
-
-            Visualize predictions for   
-            <div class="select is-small is-rounded">     
-              <select id="single-menu-qpred" onchange="updateQpredVideo()">
-              <option value="tomato" selected="selected">"put the tomatoes in the top bin"</option>
-              <option value="stick">"hit the green ball with the stick"</option>
-              <option value="handsan">"press the hand san"</option>
-              <option value="tape">"put the tape in the top drawer"</option>
-              </select>
-            </div>
-          </div> -->
 
       </div>
     </div>
   </div>
 </section>
 
-<!-- <video id="q-pred-video"
-       muted
-       autoplay
-       loop
-       width="100%">
-  <source src="media/results/qpred/tomato.mp4"
-          type="video/mp4">
-</video> -->
+
 
 
 <section class="section">
@@ -495,19 +316,6 @@
   </div>
 
 </section>
-
-<!-- 
-<section class="section" id="BibTeX">
-  <div class="container is-max-widescreen content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{shridhar2022peract,
-  title     = {Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation}, 
-  author    = {Shridhar, Mohit and Manuelli, Lucas and Fox, Dieter},
-  booktitle = {Proceedings of the 6th Conference on Robot Learning (CoRL)},
-  year      = {2022},
-}</code></pre>
-  </div>
-</section> -->
 
 
 <footer class="footer">
