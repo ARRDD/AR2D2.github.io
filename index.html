@@ -164,7 +164,7 @@
     <div class="hero-body">
       <div class="container">
         <div class="columns is-vcentered  is-centered">
-          <video id="teaser" autoplay muted loop height="300px">
+          <video id="teaser" autoplay muted loop height="100px">
             <source src="media/intro/ARDemo.mp4"
                     type="video/mp4">
           </video>
@@ -464,17 +464,18 @@
   <div class="container is-max-widescreen">
 
     <div class="rows">
-      <h2 class="title is-3">Emergent Properties</h2>
+      <h2 class="title is-3">Ablation Studies</h2>
 
-      <h3 class="title is-4">Tracking Objects</h3>
-      A selected example of tracking an unseen hand sanitizer instance with an agent that was trained on a single object with 5 "press the handsan" demos. Since <span class="dperact">PerAct</span> focuses on actions, it doesn't need a complete representation of the bottle, and only has to predict <b><i>where</i> to press</b> the sanitizer.
-
+      <h3 class="title is-4">Demonstrations vs Iterations for fine-tuning</h3>
+      We perform a diagnostic analyze on the number of demonstrations and iterations require to ground the pre-trained AR data to the real robot deployment environment. We found that <b>5 Demos</b> and <b>3,000 Iterations</b> (equvialent to 10minutes of training) yields the optimal result.
+      <h3 class="title is-4">2D data vs 3D data for training</h3>
+      <b>AR2-D2<\b> demonstrations store 2D image and 3D depth data, facilitating training of image-based behavior cloning (Image-BC) and 3D voxelized methods. With fixed camera calibration offset and no finetuning during training, 3D-input agents outperform 2D counterparts. We evaluated their performance on three tasks.
       <video id="tracking-objects"
              muted
              autoplay
              loop
              width="99%">
-        <source src="media/results/animations/handsan_tracking_v2.mp4" 
+        <source src="media/intro/v12.mp4" 
                 type="video/mp4">
       </video>
 
