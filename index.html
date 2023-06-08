@@ -153,7 +153,7 @@
         <h2 class="subtitle has-text-centered">
         <span class="dperact">AR2-D2</span> is a <b>robot demonstrations framework</b> in the form of an iOS app that people can use to project an AR robot into the physical world and record a video of8
                 themselves manipulating any object whilst simultaneously capturing the essential
-                data modalities for training <br><b>a real robot</b> 
+                data modalities for training <b>a real robot</b> 
         </h2>
       </div>
     </div>
@@ -226,24 +226,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Transformers have revolutionized vision and natural language processing 
-            with their ability to scale with large datasets. But in robotic manipulation, 
-            data is both limited and expensive. Can we still benefit from Transformers with the right problem formulation? 
+            Diligently gathered human demonstrations serve as the unsung heroes empowering the progression of robot learning.
+            Today, demonstrations are collected by training people to use specialized controllers, which (tele-)operate robots to manipulate a small number of objects.
           </p>
           <p>
-            We investigate this question with <span class="dperact">PerAct</span>, a
-            language-conditioned behavior-cloning agent for multi-task 6-DoF manipulation.
-            <span class="dperact">PerAct</span> encodes language goals and RGB-D voxel observations with a 
-            <a target=”_blank” href="https://www.deepmind.com/blog/building-architectures-that-can-handle-the-worlds-data">Perceiver Transformer</a>, and outputs discretized 
-            actions by “detecting the next best voxel action”. Unlike frameworks that operate on 2D images, the voxelized observation
-            and action space provides a strong structural prior for efficiently learning 6-DoF
-            policies. 
+            By contrast, we introduce AR2-D2: a system for collecting demonstrations which (1) does not require people with specialized training, (2) does not require any real robots during data collection, and therefore, (3) enables manipulation of diverse objects with a real robot.
+            AR2-D2 is a framework in the form of an iOS app that people can use to record a video of themselves manipulating any object whilst simultaneously capturing the essential data modalities for training a real robot. We show that data collected via our system  enables the training of behavior cloning agents in manipulating real objects.
+            Our experiments further show that training with our AR data is as effective as training with real-world robot demonstrations.
           </p>
           <p>
-            With this formulation, we train <b>a single multi-task Transformer</b> for 18
-            <a target="_blank" href="https://sites.google.com/view/rlbench">RLBench</a> (with 249 variations) and 7 real-world tasks (with 18 variations) from just a few demonstrations per task. Our
-            results show that <span class="dperact">PerAct</span> significantly outperforms unstructured image-to-action
-            agents (by 34x) and 3D ConvNet baselines (by 2.8x) for a wide range of tabletop tasks.
+            Moreover, our user study indicates that users find AR2-D2 intuitive to use and require no training in contrast to four other frequently employed methods for collecting robot demonstrations.
           </p>
         </div>
       </div>
