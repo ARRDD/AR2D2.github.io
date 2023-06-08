@@ -245,7 +245,7 @@
 </section>
 <h2 class="subtitle has-text-centered">
 </br>
-  We use <b>AR2-D2</b> to collect robot demonstrations cross three manipulation tasks (<em>press</em>, <em>pick-up</em> and <em>push</em>) on <b>9</b>personalized objects. </br>These personalized objects are uniquely <b>shaped, sized, or textured items designed to meet the specific needs or functionalities</b> of individual users within their personalized environments.
+  We use <b>AR2-D2</b> to collect robot demonstrations cross three manipulation tasks (<em>press</em>, <em>pick-up</em> and <em>push</em>) on <b>9</b> personalized objects. </br>These personalized objects are uniquely <b>shaped, sized, or textured items designed to meet the specific needs or functionalities</b> of individual users within their personalized environments.
 </h2>
 
 
@@ -272,7 +272,7 @@
       </div>
     </div>
     <br>
-    <br>
+   
     <!--/ Abstract. -->
 
   </div>
@@ -307,7 +307,7 @@
         <!-- <br> -->
         </div>
         <p>
-        We designed <b>AR2-D2<\b> as an iOS application, which can be run on an iPhone or iPad. Since modern mobile devices and tablets come equipped with in-built LiDAR, we can effectively place AR robots into the real world.
+        We designed <b>AR2-D2</b> as an iOS application, which can be run on an iPhone or iPad. Since modern mobile devices and tablets come equipped with in-built LiDAR, we can effectively place AR robots into the real world.
         The phone application is developed atop the Unity Engine and the AR Foundation kit. The application receives camera sensor data, including camera intrinsic and extrinsic values, and depth directly from the mobile device's built-in functionality. The AR Foundation kit enables the projection of the Franka Panda robot arm's URDF into the physical space. To determine user's 2D hand pose, we utilize Apple's human pose detection algorithm. This, together with the depth map is used to reconstruct the 3D pose of the human hand. By continuously tracking the hand pose at a rate of 30 frames per second, we can mimic the pose with the AR robot's end-effector.        </p>
         </br>
         </br>
@@ -340,20 +340,20 @@
         <!-- <br> -->
         </div>
         <p>
-        We designed <b>AR2-D2<\b> as an iOS application, which can be run on an iPhone or iPad. Since modern mobile devices and tablets come equipped with in-built LiDAR, we can effectively place AR robots into the real world.
-        The phone application is developed atop the Unity Engine and the AR Foundation kit. The application receives camera sensor data, including camera intrinsic and extrinsic values, and depth directly from the mobile device's built-in functionality. The AR Foundation kit enables the projection of the Franka Panda robot arm's URDF into the physical space. To determine user's 2D hand pose, we utilize Apple's human pose detection algorithm. This, together with the depth map is used to reconstruct the 3D pose of the human hand. By continuously tracking the hand pose at a rate of 30 frames per second, we can mimic the pose with the AR robot's end-effector.        </p>
+          We conducted a user-study with <b>(N=10)</b> subjects and found out that AR2-D2 are significantly faster than 4 other conventional interfaces of collecting robot demonstrations for both in simulation and real-world. 
         </br>
-        </br>
-        <img src="media/figures/figure2_1.png" class="interpolation-image" 
+        <img src="media/figures/figure4.png" class="interpolation-image" 
          alt="Interpolate start reference image." />
         </br>
         </br>
           <p>
-              Given language instructions describing a task (e.g.~``Pick up the plastic bowl''), we hire users to generate demonstrations using <b>AR2-D2</b>. From the user-generated demonstration video, we generate training data that can be used to train and deploy on a real robot. 
-              To create useful training data, we convert this video into one where it looks like an AR robot manipulated the object. To do so, we segment out and eliminate the human hand using Segment-Anything. We fill in the gap left behind by the missing hand with a video in-painting technique known as E2FGVI.
-              Finally, we produce a video with the AR robot arm moving to the key-points identified by the user's hand. This final video processed video makes it appear as if an AR robot arm manipulated the real-world object; it can used as training data for visual-based imitation learning.
-              Additionally, since we have access to the scene's depth estimation, we can also generate a 3D voxelized representation of the scene and use it to train agents like Perceiver-Actor.           </p>
-<!--         </br>
+            We also compared the data collected by AR2-D2 with a few other baseline approaches, and found that demonstrations collected via AR2-D2 yields useful representation for training a real-robot and also demonstrations collected via AR2-D2 train policies as accurately as demonstrations collect from a real robot.
+          </br>
+          <img src="media/figures/Screen Shot 2023-06-07 at 11.06.07 PM.png" class="interpolation-image" 
+           alt="Interpolate start reference image." />
+          </br> 
+            
+            <!--         </br>
         </br>
         <h3 class="title is-4">Encoding High-Dimensional Input</h3>
           <p class="justify">
