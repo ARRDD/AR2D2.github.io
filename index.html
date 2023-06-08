@@ -164,7 +164,7 @@
     <div class="hero-body">
       <div class="container">
         <div class="columns is-vcentered  is-centered">
-          <video id="teaser" autoplay muted loop height="70%">
+          <video id="teaser" autoplay muted loop height="300px">
             <source src="media/intro/ARDemo.mp4"
                     type="video/mp4">
           </video>
@@ -319,7 +319,7 @@
               Given language instructions describing a task (e.g.~``Pick up the plastic bowl''), we hire users to generate demonstrations using <b>AR2-D2</b>. From the user-generated demonstration video, we generate training data that can be used to train and deploy on a real robot. 
               To create useful training data, we convert this video into one where it looks like an AR robot manipulated the object. To do so, we segment out and eliminate the human hand using Segment-Anything. We fill in the gap left behind by the missing hand with a video in-painting technique known as E2FGVI.
               Finally, we produce a video with the AR robot arm moving to the key-points identified by the user's hand. This final video processed video makes it appear as if an AR robot arm manipulated the real-world object; it can used as training data for visual-based imitation learning.
-              Additionally, since we have access to the scene's depth estimation, we can also generate a 3D voxelized representation of the scene and use it to train agents like Perceiver-Actor           </p>
+              Additionally, since we have access to the scene's depth estimation, we can also generate a 3D voxelized representation of the scene and use it to train agents like Perceiver-Actor.           </p>
 <!--         </br>
         </br>
         <h3 class="title is-4">Encoding High-Dimensional Input</h3>
@@ -335,8 +335,37 @@
         <!--/ Re-rendering. -->
 
         <h2 class="title is-3">Results</h2>
+    
+        <div class="content has-text-justified">
+        <!-- <br> -->
+        </div>
+        <p>
+        We designed <b>AR2-D2<\b> as an iOS application, which can be run on an iPhone or iPad. Since modern mobile devices and tablets come equipped with in-built LiDAR, we can effectively place AR robots into the real world.
+        The phone application is developed atop the Unity Engine and the AR Foundation kit. The application receives camera sensor data, including camera intrinsic and extrinsic values, and depth directly from the mobile device's built-in functionality. The AR Foundation kit enables the projection of the Franka Panda robot arm's URDF into the physical space. To determine user's 2D hand pose, we utilize Apple's human pose detection algorithm. This, together with the depth map is used to reconstruct the 3D pose of the human hand. By continuously tracking the hand pose at a rate of 30 frames per second, we can mimic the pose with the AR robot's end-effector.        </p>
+        </br>
+        </br>
+        <img src="media/figures/figure2_1.png" class="interpolation-image" 
+         alt="Interpolate start reference image." />
+        </br>
+        </br>
+          <p>
+              Given language instructions describing a task (e.g.~``Pick up the plastic bowl''), we hire users to generate demonstrations using <b>AR2-D2</b>. From the user-generated demonstration video, we generate training data that can be used to train and deploy on a real robot. 
+              To create useful training data, we convert this video into one where it looks like an AR robot manipulated the object. To do so, we segment out and eliminate the human hand using Segment-Anything. We fill in the gap left behind by the missing hand with a video in-painting technique known as E2FGVI.
+              Finally, we produce a video with the AR robot arm moving to the key-points identified by the user's hand. This final video processed video makes it appear as if an AR robot arm manipulated the real-world object; it can used as training data for visual-based imitation learning.
+              Additionally, since we have access to the scene's depth estimation, we can also generate a 3D voxelized representation of the scene and use it to train agents like Perceiver-Actor.           </p>
+<!--         </br>
+        </br>
+        <h3 class="title is-4">Encoding High-Dimensional Input</h3>
+          <p class="justify">
+            <img src="media/figures/perceiver.png" class="interpolation-image" width="480" align="right"
+                 style="margin:0% 4% "
+                 alt="Interpolate start reference image." />
+             The input grid is 100&times;100&times;100 = 1 million voxels. After extracting 5&times;5&times;5 patches, the input is 20&times;20&times;20 = 8000 embeddings long. Despite this long sequence, Perceiver uses a small set of latent vectors to encode the input. These latent vectors are randomly initialized and trained end-to-end. This approach decouples the depth of the Transformer self-attention layers from the dimensionality of the input space, which allows us train <span class="dperact">PerAct</span> on very large input voxel grids. Perceiver has been deployed in several domains like <a target="_blank" href="https://www.deepmind.com/publications/perceiver-ar-general-purpose-long-context-autoregressive-generation">long-context auto-regressive generation</a>, <a target="_blank" href="https://arxiv.org/abs/2204.14198">vision-language models for few-shot learning</a>, <a target="_blank" href="https://arxiv.org/abs/2107.14795">image and audio classification, and optical flow prediction.</a>
+          </p> -->
+        <br/>
+        <br/>
 
-        <h3 class="title is-4">Simulation Results</h3>
+<!--         <h3 class="title is-4">Simulation Results</h3>
 
         <div class="columns">
           <div class="column has-text-centered">
@@ -413,21 +442,21 @@
               <option value="tape">"put the tape in the top drawer"</option>
               </select>
             </div>
-          </div>
+          </div> -->
 
       </div>
     </div>
   </div>
 </section>
 
-<video id="q-pred-video"
+<!-- <video id="q-pred-video"
        muted
        autoplay
        loop
        width="100%">
   <source src="media/results/qpred/tomato.mp4"
           type="video/mp4">
-</video>
+</video> -->
 
 <br>
 <br>
